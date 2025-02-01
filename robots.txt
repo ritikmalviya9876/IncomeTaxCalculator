@@ -1,0 +1,10 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Disallow:
+
+# Block certain private areas from being crawled
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.incometaxcalculators.in/sitemap.xml
