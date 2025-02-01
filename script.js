@@ -1,3 +1,13 @@
+window.onload = function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const income = urlParams.get("income");
+
+  if (income) {
+    document.getElementById("income").value = formatIndianNumber(income);
+    calculateTax(); // Auto-calculate if income exists in URL
+  }
+};
+
 function calculateTax() {
   let incomeInput = document.getElementById("income");
   let income = parseFloat(incomeInput.value.replace(/,/g, "")) || 0;
@@ -32,7 +42,20 @@ function calculateTax() {
   }
 
   resultBox.classList.remove("hidden");
+  document.getElementById("shareButton").classList.remove("hidden");
   updateChart(oldTax, newTax);
+}
+
+function shareTaxResult() {
+  let income = document.getElementById("income").value.replace(/,/g, "");
+  let url = `${window.location.origin}${window.location.pathname}?income=${income}`;
+
+  navigator.clipboard.writeText(url).then(() => {
+    let copyMessage = document.getElementById("copyMessage");
+    copyMessage.classList.remove("hidden");
+
+    setTimeout(() => copyMessage.classList.add("hidden"), 2000);
+  });
 }
 
 function updateChart(oldTax, newTax) {
