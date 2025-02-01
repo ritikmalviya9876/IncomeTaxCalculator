@@ -26,6 +26,12 @@ function calculateTax() {
 
   errorMsg.classList.add("hidden");
 
+  gtag("event", "calculateTax", {
+    event_category: "User Input",
+    event_label: "Form Submission",
+    input_value: income,
+  });
+
   let oldTax = calculateNewRegimePreBudgetTax(income);
   let newTax = calculateNewRegimePostBudgetTax(income);
   let taxSavings = oldTax - newTax;
@@ -76,7 +82,9 @@ function updateChart(oldTax, newTax) {
         },
       ],
     },
-    options: { responsive: true },
+    options: {
+      responsive: true,
+    },
   });
 }
 
