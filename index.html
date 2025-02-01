@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tax Calculator</h2>
+        <h4>Compare your savings Pre and Post 2025 Budget</h4>
+        <div class="input-group">
+            <label for="income">Income:</label>
+            <input type="text" id="income" placeholder="Enter your income in ₹(Ex.- 10,00,000)">
+            <small id="error-msg" class="error hidden">Please enter a valid income.</small>
+        </div>
+        <button onclick="calculateTax()">Calculate Tax</button>
+        <div class="result-box hidden">
+            <p>Total tax in New regime (Pre Budget): <span id="oldTax">-</span></p>
+            <p>Total tax in New regime (Post Budget): <span id="newTax">-</span></p>
+            <p class="savings-info"></p>
+            <canvas id="taxChart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
