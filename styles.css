@@ -7,73 +7,93 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite; /* Animated gradient */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
 
 .container {
   background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   text-align: center;
   width: 420px;
   color: black;
+  transition: transform 0.3s ease;
 }
 
-h2,
-h4 {
-  margin-bottom: 15px;
+.container:hover {
+  transform: scale(1.02); /* Slight zoom-in effect */
+}
+
+h1,
+h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h1 {
+  background: linear-gradient(
+    135deg,
+    #ff8c00,
+    #d9534f
+  ); /* Gradient from orange to red */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+h3 {
+  color: #8a2be2; /* Muted Lavender for uniqueness */
 }
 
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: left;
+}
+
+label {
+  color: #666; /* Soft gray for labels */
+  font-size: 16px;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   font-size: 16px;
+  transition: all 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 button {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 12px 18px;
+  padding: 14px 20px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.3s;
-  margin: 5px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.result-box {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: black;
-}
-
-.savings-info {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #28a745;
-}
-
-.hidden {
-  display: none;
-}
-
-.error {
-  color: red;
-  font-size: 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 button:hover {
@@ -81,41 +101,67 @@ button:hover {
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-/* Make the container responsive */
+.result-box {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: black;
+  margin-top: 20px;
+}
+
+.savings-info {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #28a745; /* Green for savings info to represent positive change */
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: #dc3545; /* Bright red for error messages */
+  font-size: 14px;
+}
+
+.error.hidden {
+  display: none;
+}
+
+/* Media Queries */
 @media (max-width: 600px) {
   .container {
     width: 90%;
-    padding: 15px;
+    padding: 20px;
   }
 
-  h2 {
+  h1 {
     font-size: 1.5rem;
   }
 
-  h4 {
+  h3 {
     font-size: 1rem;
   }
 
   input {
-    width: 100%; /* Full width on mobile */
-    padding: 15px; /* Add more padding for better touch interaction */
-    font-size: 16px; /* Larger font size for better readability */
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+    padding: 16px;
+    font-size: 18px; /* Larger font size for better readability */
+    border-radius: 10px;
   }
 
   button {
     width: 100%;
-    padding: 12px;
+    padding: 16px;
   }
 
   .result-box {
+    padding: 25px;
     margin-top: 20px;
-    padding: 20px;
   }
 
   .savings-info {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }

@@ -4,34 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Income Tax Calculator</title>
+    <meta name="description"
+        content="Use our Income Tax Calculator to calculate your taxes for 2025 in India. Understand tax benefits post-budget and calculate savings in the new tax regime.">
+    <meta name="keywords"
+        content="Income tax calculator India, 2025 tax calculation, Income tax benefits India, Income tax savings 2025, Tax regime India, Indian tax calculator, Tax calculator after 2025 budget, Indian tax slabs 2025, tax comparison 2024 2025, tax difference 2024 2025, 2025 tax benefits India, budget 2025 tax cuts, 2025 tax slabs India, tax savings comparison 2024 2025, tax reduction 2025, tax savings India, income tax regime 2024 vs 2025, how tax is reduced 2025, Indian tax rules 2025, 2025 budget impact on taxes, tax calculation 2024 2025, new tax policies 2025, personal tax calculator 2025, comparison of tax rates 2024 2025, new income tax rates India 2025, income tax calculator post budget 2025, budget 2025 income tax reduction, tax rate comparison India 2024 2025">
+    <meta name="author" content="Your Website Name">
+    <meta property="og:title" content="Income Tax Calculator India 2025 | Calculate Your Tax Benefits After Budget">
+    <meta property="og:description"
+        content="Calculate your taxes for 2025 in India with our easy-to-use Income Tax Calculator. Understand the impact of the 2025 budget on your tax savings.">
+    <meta property="og:image" content="URL-to-image.jpg">
+    <meta property="og:url" content="https://www.yoursite.com/income-tax-calculator-india-2025">
+    <meta property="og:type" content="website">
+    <meta name="twitter:title" content="Income Tax Calculator India 2025">
+    <meta name="twitter:description"
+        content="Use our Income Tax Calculator to calculate taxes and savings for 2025, and see the impact of the Indian 2025 budget on your tax obligations.">
+    <meta name="twitter:image" content="URL-to-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Income Tax Calculator India 2025 | Calculate Your Tax Benefits After Budget</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <meta charset="UTF-8">
+    <link rel="canonical" href="https://www.yoursite.com/income-tax-calculator-india-2025">
 </head>
 
 <body>
     <div class="container">
-        <h2>Tax Calculator</h2>
-        <h4>Compare your savings Pre and Post 2025 Budget</h4>
+        <h1>Income Tax Calculator India 2025</h1>
+        <h3>Calculate Your Tax Benefits Post 2025 Budget</h3>
+        <p>Use our <b> Income Tax Calculator</b> to calculate taxes for <b>2025</b> and explore the <b>tax benefits
+                after
+                the
+                2025 Indian Budget !!</b></p>
+
         <div class="input-group">
             <label for="income">Income:</label>
             <input type="text" id="income" placeholder="Enter your income in ₹(Ex.- 10,00,000)">
             <small id="error-msg" class="error hidden">Please enter a valid income.</small>
         </div>
+
         <button onclick="calculateTax()">Calculate Tax</button>
+
         <div class="result-box hidden">
             <p>Total tax in New regime (Pre Budget): <span id="oldTax">-</span></p>
             <p>Total tax in New regime (Post Budget): <span id="newTax">-</span></p>
-            <p class="savings-info"></p>
+            <p class="savings-info">Tax savings after 2025 budget: <span id="savings">-</span></p>
             <canvas id="taxChart"></canvas>
         </div>
     </div>
+
     <script src="script.js"></script>
 
-
-
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKTTHZBNJ3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -40,7 +62,6 @@
 
         gtag('config', 'G-JKTTHZBNJ3');
     </script>
-
 </body>
 
 </html>

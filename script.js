@@ -1,8 +1,6 @@
 function calculateTax() {
   let incomeInput = document.getElementById("income");
-  console.log("incomeInput", incomeInput);
   let income = parseFloat(incomeInput.value.replace(/,/g, "")) || 0;
-  console.log("income", income);
   let resultBox = document.querySelector(".result-box");
   let oldTaxElement = document.getElementById("oldTax");
   let newTaxElement = document.getElementById("newTax");
